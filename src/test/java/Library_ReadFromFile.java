@@ -13,23 +13,22 @@ public class Library_ReadFromFile {
     public void AddBook() throws IOException {
         RestAssured.baseURI = "http://216.10.245.166";
         String path="D:\\payload.txt" ;
-        given().
+        given().log().all().contentType("application/json").
                 body(readFile(path))
-                .post("Library/Addbook.php")
-                .then().log().all();
+                .when().post("Library/Addbook.php")
+                .then().log().all().statusCode(200);
 
 
     }
 
 
-    public byte[] readFile(String path) throws IOException {
-        return (Files.readAllBytes(Paths.get(path)));
+    public String readFile(String path) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(path)));
 
     }
 
 
 }
-
 
 
 
