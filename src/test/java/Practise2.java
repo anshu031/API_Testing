@@ -11,7 +11,7 @@ public class Practise2 {
 
 
         RestAssured.baseURI="https://rahulshettyacademy.com/";
-        String response=given().queryParam("key","qaclick123").header("Content-Type","application/json")
+        String response=given().queryParam("key","qaclick123").header("content-Type","application/json")
                 .body(payload.AddPlace()).when().post("maps/api/place/add/json")
                 .then().log().all().assertThat().statusCode(200).body("scope",equalTo("APP"))
                 .header("server","Apache/2.4.52 (Ubuntu)")
