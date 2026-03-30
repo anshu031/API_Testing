@@ -11,14 +11,22 @@ import static io.restassured.RestAssured.*;
 
 public class Jira_Auth {
 
+<<<<<<< HEAD
 
+=======
+    String key="checkgitignore";
+>>>>>>> ddb0f7f15db37ad9fedfdb3485614c28fdfd8678
     @Test
     public void createBug() throws InterruptedException {
 
         RestAssured.baseURI="https://anshuman31.atlassian.net/";
 
 
+<<<<<<< HEAD
 String key="a";
+=======
+
+>>>>>>> ddb0f7f15db37ad9fedfdb3485614c28fdfd8678
 
         Response res=  given().log().all()
                     .auth()
